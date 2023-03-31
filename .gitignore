@@ -1,0 +1,12 @@
+.vscode/
+node_modules/
+scratch/
+system/css/
+system/i18n/
+
+*.code-workspace
+
+# Allow these specific files from the above directories
+!.vscode/extensions.json
+!.vscode/i18n-ally-custom-framework.yml
+!.vscode/settings.json
