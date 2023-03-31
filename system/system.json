@@ -1,0 +1,36 @@
+{
+	"id": "jcom",
+	"title": "John Carter of Mars",
+	"desciption": "A system for playing the John Carter of Mars RPG from Modiphius",
+	"version": "THIS_IS_REPLACED_AT_BUILD_TIME",
+	"schema": "230329.1",
+	"compatibility": {
+		"minimum": "10",
+		"verified": "10"
+	},
+	"url": "THIS_IS_REPLACED_AT_BUILD_TIME",
+	"manifest": "THIS_IS_REPLACED_AT_BUILD_TIME",
+	"download": "THIS_IS_REPLACED_AT_BUILD_TIME",
+	"authors": [
+		{
+			"name": "Paul Maskelyne",
+			"discord": "Muttley#3296",
+			"email": "mu77ley@gmail.com",
+			"mastodon": "@muttley@dice.camp"
+		}
+	],
+	"esmodules": ["jcom-compiled.mjs"],
+	"styles": ["css/jcom.css"],
+	"packs": [],
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "i18n/en.json"
+		}
+	],
+	"socket": true,
+	"gridDistance": 5,
+	"initiative": "",
+	"gridUnits": "ad"
+}
