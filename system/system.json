@@ -32,5 +32,6 @@
 	"socket": true,
 	"gridDistance": 5,
 	"initiative": "",
-	"gridUnits": "ad"
+	"gridUnits": "ad",
+	"background": "systems/jcom/assets/artwork/JohnCarterOfMars-Splash.webp"
 }
