@@ -1,2 +1,2 @@
-# foundryvtt-jcom
-John Carter of Mars game system for Foundry VTT
+# John Carter of Mars for Foundry VTT
+John Carter of Mars RPG system for Foundry VTT

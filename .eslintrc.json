@@ -126,7 +126,7 @@
 		"comma-spacing": "warn",
 		"dot-notation": "warn",
 		"indent": ["error", "tab", {"SwitchCase": 1}],
-		"key-spacing": "warn",
+		"key-spacing": ["warn", {"mode": "minimum"}],
 		"keyword-spacing": ["warn", {"overrides": {"catch": {"before": true, "after": false}}}],
 		"max-len": ["warn", {
 			"code": 100,
