@@ -5,8 +5,8 @@
 	"version": "THIS_IS_REPLACED_AT_BUILD_TIME",
 	"schema": "230329.1",
 	"compatibility": {
-		"minimum": "10",
-		"verified": "10"
+		"minimum": "11",
+		"verified": "11"
 	},
 	"url": "THIS_IS_REPLACED_AT_BUILD_TIME",
 	"manifest": "THIS_IS_REPLACED_AT_BUILD_TIME",
