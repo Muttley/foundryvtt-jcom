@@ -1,6 +1,6 @@
 import { SYSTEM_ID } from "../../constants.mjs";
 
-export default class JohnCarterActorSheet extends ActorSheet {
+export default class JohnCarterActorBaseSheet extends ActorSheet {
 
 	/** @override */
 	static get defaultOptions() {
@@ -15,4 +15,9 @@ export default class JohnCarterActorSheet extends ActorSheet {
 		});
 	}
 
+	/** @override */
+	async getData() {
+		const context = await super.getData();
+		return context;
+	}
 }

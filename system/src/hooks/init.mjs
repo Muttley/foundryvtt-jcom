@@ -2,7 +2,9 @@ import {SYSTEM, SYSTEM_ID, SYSTEM_NAME} from "../constants.mjs";
 
 import JohnCarterActor from "../documents/actors/JohnCarterActor.mjs";
 import JohnCarterAdventurerDataModel from "../datamodels/actors/JohnCarterAdventurerDataModel.mjs";
-import JohnCarterAventurerSheet from "../sheets/actors/JohnCarterAventurerSheet.mjs";
+import JohnCarterEnemyDataModel from "../datamodels/actors/JohnCarterEnemyDataModel.mjs";
+import JohnCarterEnemySheet from "../sheets/actors/JohnCarterEnemySheet.mjs";
+import JohnCarterAdventurerSheet from "../sheets/actors/JohnCarterAdventurerSheet.mjs";
 
 import registerSystemSettings from "../settings.mjs";
 
@@ -20,6 +22,7 @@ export function init() {
 function registerDataModels() {
 	CONFIG.Actor.dataModels = {
 		adventurer: JohnCarterAdventurerDataModel,
+		enemy: JohnCarterEnemyDataModel,
 	};
 
 	CONFIG.Item.dataModels = {};
@@ -33,12 +36,20 @@ function registerDocumentSheets() {
 	Actors.unregisterSheet("core", ActorSheet);
 	Items.unregisterSheet("core", ItemSheet);
 
-	// Actors
 	Actors.registerSheet(
 		SYSTEM_ID,
-		JohnCarterAventurerSheet,
+		JohnCarterAdventurerSheet,
 		{
 			types: ["adventurer"],
+			makeDefault: true,
+		}
+	);
+
+	Actors.registerSheet(
+		SYSTEM_ID,
+		JohnCarterEnemySheet,
+		{
+			types: ["enemy"],
 			makeDefault: true,
 		}
 	);
