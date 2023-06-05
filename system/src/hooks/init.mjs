@@ -1,13 +1,10 @@
 import {SYSTEM, SYSTEM_ID, SYSTEM_NAME} from "../constants.mjs";
 
-// Documents
 import JohnCarterActor from "../documents/actors/JohnCarterActor.mjs";
-
-// Data Models
 import JohnCarterAdventurerDataModel from "../datamodels/actors/JohnCarterAdventurerDataModel.mjs";
-
-// Sheets
 import JohnCarterAventurerSheet from "../sheets/actors/JohnCarterAventurerSheet.mjs";
+
+import registerSystemSettings from "../settings.mjs";
 
 export function init() {
 	console.log(`${SYSTEM_NAME} | Initializing System`);
@@ -17,6 +14,7 @@ export function init() {
 	registerDataModels();
 	registerDocumentSheets();
 	registerDocumentClasses();
+	registerSystemSettings();
 }
 
 function registerDataModels() {
