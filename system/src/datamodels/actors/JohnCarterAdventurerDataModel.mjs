@@ -1,3 +1,5 @@
+import AttributesDataModel from "../AttributesDataModel.mjs";
+
 export default class JohnCarterAdventurerDataModel extends foundry.abstract.DataModel {
 
 	/** @inheritDoc */
@@ -8,15 +10,14 @@ export default class JohnCarterAdventurerDataModel extends foundry.abstract.Data
 		const fields = foundry.data.fields;
 
 		return {
-			attributes: new fields.SchemaField({
-				cunning: new fields.NumberField({min: 0, max: 12, initial: 0, integer: true}),
-				daring:  new fields.NumberField({min: 0, max: 12, initial: 0, integer: true}),
-				empathy: new fields.NumberField({min: 0, max: 12, initial: 0, integer: true}),
-				might:   new fields.NumberField({min: 0, max: 12, initial: 0, integer: true}),
-				passion: new fields.NumberField({min: 0, max: 12, initial: 0, integer: true}),
-				reason:  new fields.NumberField({min: 0, max: 12, initial: 0, integer: true}),
-			}),
+			attributes: new fields.SchemaField(
+				AttributesDataModel.defineSchema()
+			),
 			biography: new fields.HTMLField(),
+			momentum:  new fields.SchemaField({
+				generated: new fields.NumberField({min: 0, initial: 0, integer: true}),
+				stored:    new fields.NumberField({min: 0, initial: 0, integer: true}),
+			}),
 		};
 	}
 }
