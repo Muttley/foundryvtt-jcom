@@ -1,11 +1,13 @@
 import { SYSTEM_ID } from "../../constants.mjs";
 
-export default class JohnCarterActorBaseSheet extends ActorSheet {
+import JcomItemBaseSheet from "./JcomItemBaseSheet.mjs";
+
+export default class JcomTalentSheet extends JcomItemBaseSheet {
 
 	/** @override */
 	static get defaultOptions() {
 		return foundry.utils.mergeObject(super.defaultOptions, {
-			classes: [SYSTEM_ID, "sheet"],
+			classes: [SYSTEM_ID, "sheet", "talent"],
 			closeOnSubmit: true,
 			height: 480,
 			resizable: true,
@@ -16,8 +18,14 @@ export default class JohnCarterActorBaseSheet extends ActorSheet {
 	}
 
 	/** @override */
+	get template() {
+		return `systems/${SYSTEM_ID}/templates/items/talent.hbs`;
+	}
+
+	/** @override */
 	async getData() {
 		const context = await super.getData();
 		return context;
 	}
+
 }

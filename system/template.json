@@ -3,6 +3,6 @@
     "types": ["adventurer", "enemy"]
   },
   "Item": {
-    "types": []
+    "types": ["talent"]
   }
 }

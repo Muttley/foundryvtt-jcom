@@ -3,7 +3,7 @@ import Logger from "../../utils/Logger.mjs";
 /**
  * Extend the basic ActorSheet with some shared behaviors
  */
-export default class JohnCarterActor extends Actor {
+export default class JcomActor extends Actor {
 
 	prepareDerivedData() {
 		switch (this.type) {

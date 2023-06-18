@@ -1,8 +1,8 @@
 import { SYSTEM_ID } from "../../constants.mjs";
 
-import JohnCarterActorBaseSheet from "./JohnCarterActorBaseSheet.mjs";
+import JcomActorBaseSheet from "./JcomActorBaseSheet.mjs";
 
-export default class JohnCarterAventurerSheet extends JohnCarterActorBaseSheet {
+export default class JcomAventurerSheet extends JcomActorBaseSheet {
 
 	/** @override */
 	get template() {

@@ -1,6 +1,6 @@
-import AttributesDataModel from "../AttributesDataModel.mjs";
+import JcomAttributesDataModel from "../partials/JcomAttributesDataModel.mjs";
 
-export default class JohnCarterEnemyDataModel extends foundry.abstract.DataModel {
+export default class JcomEnemyDataModel extends foundry.abstract.DataModel {
 
 	/** @inheritDoc */
 	static _enableV10Validation = false;
@@ -11,7 +11,7 @@ export default class JohnCarterEnemyDataModel extends foundry.abstract.DataModel
 
 		return {
 			attributes: new fields.SchemaField(
-				AttributesDataModel.defineSchema()
+				JcomAttributesDataModel.defineSchema()
 			),
 		};
 	}

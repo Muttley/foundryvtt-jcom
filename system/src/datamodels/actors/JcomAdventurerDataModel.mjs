@@ -1,6 +1,6 @@
-import AttributesDataModel from "../AttributesDataModel.mjs";
+import JcomAttributesDataModel from "../partials/JcomAttributesDataModel.mjs";
 
-export default class JohnCarterAdventurerDataModel extends foundry.abstract.DataModel {
+export default class JcomAdventurerDataModel extends foundry.abstract.DataModel {
 
 	/** @inheritDoc */
 	static _enableV10Validation = false;
@@ -11,7 +11,7 @@ export default class JohnCarterAdventurerDataModel extends foundry.abstract.Data
 
 		return {
 			attributes: new fields.SchemaField(
-				AttributesDataModel.defineSchema()
+				JcomAttributesDataModel.defineSchema()
 			),
 			biography: new fields.HTMLField(),
 			momentum:  new fields.SchemaField({

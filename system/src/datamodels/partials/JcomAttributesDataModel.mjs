@@ -1,4 +1,4 @@
-export default class AttributesDataModel extends foundry.abstract.DataModel {
+export default class JcomAttributesDataModel extends foundry.abstract.DataModel {
 
 	/** @inheritDoc */
 	static _enableV10Validation = false;

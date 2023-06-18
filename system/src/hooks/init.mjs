@@ -1,10 +1,13 @@
 import {SYSTEM, SYSTEM_ID, SYSTEM_NAME} from "../constants.mjs";
 
-import JohnCarterActor from "../documents/actors/JohnCarterActor.mjs";
-import JohnCarterAdventurerDataModel from "../datamodels/actors/JohnCarterAdventurerDataModel.mjs";
-import JohnCarterEnemyDataModel from "../datamodels/actors/JohnCarterEnemyDataModel.mjs";
-import JohnCarterEnemySheet from "../sheets/actors/JohnCarterEnemySheet.mjs";
-import JohnCarterAdventurerSheet from "../sheets/actors/JohnCarterAdventurerSheet.mjs";
+import JcomActor from "../documents/actors/JcomActor.mjs";
+import JcomAdventurerDataModel from "../datamodels/actors/JcomAdventurerDataModel.mjs";
+import JcomAdventurerSheet from "../sheets/actors/JcomAdventurerSheet.mjs";
+import JcomEnemyDataModel from "../datamodels/actors/JcomEnemyDataModel.mjs";
+import JcomEnemySheet from "../sheets/actors/JcomEnemySheet.mjs";
+import JcomItem from "../documents/items/JcomItem.mjs";
+import JcomTalentDataModel from "../datamodels/items/JcomTalentDataModel.mjs";
+import JcomTalentSheet from "../sheets/items/JcomTalentSheet.mjs";
 
 import registerSystemSettings from "../settings.mjs";
 
@@ -21,36 +24,26 @@ export function init() {
 
 function registerDataModels() {
 	CONFIG.Actor.dataModels = {
-		adventurer: JohnCarterAdventurerDataModel,
-		enemy: JohnCarterEnemyDataModel,
+		adventurer: JcomAdventurerDataModel,
+		enemy: JcomEnemyDataModel,
 	};
 
-	CONFIG.Item.dataModels = {};
+	CONFIG.Item.dataModels = {
+		talent: JcomTalentDataModel,
+	};
 }
 
 function registerDocumentClasses() {
-	CONFIG.Actor.documentClass = JohnCarterActor;
+	CONFIG.Actor.documentClass = JcomActor;
+	CONFIG.Item.documentClass = JcomItem;
 }
 
 function registerDocumentSheets() {
 	Actors.unregisterSheet("core", ActorSheet);
 	Items.unregisterSheet("core", ItemSheet);
 
-	Actors.registerSheet(
-		SYSTEM_ID,
-		JohnCarterAdventurerSheet,
-		{
-			types: ["adventurer"],
-			makeDefault: true,
-		}
-	);
+	Actors.registerSheet(SYSTEM_ID, JcomAdventurerSheet, {types: ["adventurer"], makeDefault: true});
+	Actors.registerSheet(SYSTEM_ID, JcomEnemySheet, {types: ["enemy"], makeDefault: true});
 
-	Actors.registerSheet(
-		SYSTEM_ID,
-		JohnCarterEnemySheet,
-		{
-			types: ["enemy"],
-			makeDefault: true,
-		}
-	);
+	Items.registerSheet(SYSTEM_ID, JcomTalentSheet, {types: ["talent"], makeDefault: true});
 }
