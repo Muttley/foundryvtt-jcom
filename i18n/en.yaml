@@ -1,3 +1,8 @@
+JCOM.actor.name.placeholder: Actor Name
 JCOM.settings.debugEnabled.hint: Enable or Disable additional debug logging
 JCOM.settings.debugEnabled.name: Enable/Disable Debug
 JCOM.system.title: John Carter of Mars
+TYPES.Actor.adventurer: Adventurer
+TYPES.Actor.enemy: Enemy
+TYPES.Item.race: Race
+TYPES.Item.talent: Talent

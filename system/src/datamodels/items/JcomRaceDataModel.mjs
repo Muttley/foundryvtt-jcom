@@ -1,6 +1,6 @@
 import JcomBaseItemDataModel from "./JcomBaseItemDataModel.mjs";
 
-export default class JcomTalentDataModel extends JcomBaseItemDataModel {
+export default class JcomRaceDataModel extends JcomBaseItemDataModel {
 
 	/** @inheritDoc */
 	static _enableV10Validation = false;

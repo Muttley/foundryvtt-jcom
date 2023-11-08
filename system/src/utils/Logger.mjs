@@ -1,5 +1,3 @@
-import { SYSTEM_ID, SYSTEM_NAME } from "../constants.mjs";
-
 export default class Logger {
 	static DEBUG_ENABLED = null;
 

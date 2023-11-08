@@ -1,3 +1,5 @@
+import JcomItem from "../../documents/JcomItem.mjs";
+
 import JcomAttributesDataModel from "../partials/JcomAttributesDataModel.mjs";
 
 export default class JcomAdventurerDataModel extends foundry.abstract.DataModel {
@@ -18,6 +20,14 @@ export default class JcomAdventurerDataModel extends foundry.abstract.DataModel 
 				generated: new fields.NumberField({min: 0, initial: 0, integer: true}),
 				stored:    new fields.NumberField({min: 0, initial: 0, integer: true}),
 			}),
+			race: new fields.ForeignDocumentField(
+				JcomItem,
+				{
+					idOnly: true,
+					required: false,
+					type: "race",
+				}
+			),
 		};
 	}
 }

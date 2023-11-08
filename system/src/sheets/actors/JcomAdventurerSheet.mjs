@@ -1,12 +1,13 @@
-import { SYSTEM_ID } from "../../constants.mjs";
-
 import JcomActorBaseSheet from "./JcomActorBaseSheet.mjs";
 
 export default class JcomAventurerSheet extends JcomActorBaseSheet {
 
 	/** @override */
-	get template() {
-		return `systems/${SYSTEM_ID}/templates/actors/adventurer.hbs`;
+	static get defaultOptions() {
+		return mergeObject(super.defaultOptions, {
+			width: 720,
+			height: 780,
+		});
 	}
 
 	/** @override */

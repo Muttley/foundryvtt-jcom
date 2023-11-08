@@ -1,24 +1,23 @@
-export default class JcomActorBaseSheet extends ActorSheet {
+import JcomItemBaseSheet from "./JcomItemBaseSheet.mjs";
+
+export default class JcomTalentSheet extends JcomItemBaseSheet {
 
 	/** @override */
 	static get defaultOptions() {
 		return foundry.utils.mergeObject(super.defaultOptions, {
-			classes: [SYSTEM_ID, "sheet", "actor"],
+			classes: ["jcom", "sheet", "race"],
 			closeOnSubmit: true,
+			height: 480,
 			resizable: true,
-			submitOnChange: true,
+			submitOnChange: false,
 			submitOnClose: true,
+			width: 520,
 		});
 	}
 
 	/** @override */
 	get template() {
-		return `systems/${SYSTEM_ID}/templates/actors/${this.actor.type}.hbs`;
-	}
-
-	/** @inheritdoc */
-	get title() {
-		return `[${this.actor.type}] ${this.actor.name}`;
+		return "systems/jcom/templates/items/talent.hbs";
 	}
 
 	/** @override */
@@ -26,4 +25,5 @@ export default class JcomActorBaseSheet extends ActorSheet {
 		const context = await super.getData();
 		return context;
 	}
+
 }

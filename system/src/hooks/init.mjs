@@ -1,13 +1,12 @@
 import {SYSTEM, SYSTEM_ID, SYSTEM_NAME} from "../constants.mjs";
 
-import JcomActor from "../documents/actors/JcomActor.mjs";
-import JcomAdventurerDataModel from "../datamodels/actors/JcomAdventurerDataModel.mjs";
-import JcomAdventurerSheet from "../sheets/actors/JcomAdventurerSheet.mjs";
-import JcomEnemyDataModel from "../datamodels/actors/JcomEnemyDataModel.mjs";
-import JcomEnemySheet from "../sheets/actors/JcomEnemySheet.mjs";
-import JcomItem from "../documents/items/JcomItem.mjs";
-import JcomTalentDataModel from "../datamodels/items/JcomTalentDataModel.mjs";
-import JcomTalentSheet from "../sheets/items/JcomTalentSheet.mjs";
+import JcomActor from "../documents/JcomActor.mjs";
+import JcomItem from "../documents/JcomItem.mjs";
+
+import * as jcomDataModels from "../datamodels/_module.mjs";
+import * as jcomSheets from "../sheets/_module.mjs";
+
+import Logger from "../utils/Logger.mjs";
 
 import registerSystemSettings from "../settings.mjs";
 
@@ -15,6 +14,14 @@ export function init() {
 	console.log(`${SYSTEM_NAME} | Initializing System`);
 
 	CONFIG.SYSTEM = SYSTEM;
+
+	globalThis.SYSTEM_ID = SYSTEM_ID;
+	globalThis.SYSTEM_NAME = SYSTEM_NAME;
+
+	globalThis.jcom = {
+		config: SYSTEM,
+		logger: Logger,
+	};
 
 	registerDataModels();
 	registerDocumentSheets();
@@ -24,12 +31,13 @@ export function init() {
 
 function registerDataModels() {
 	CONFIG.Actor.dataModels = {
-		adventurer: JcomAdventurerDataModel,
-		enemy: JcomEnemyDataModel,
+		adventurer: jcomDataModels.JcomAdventurerDataModel,
+		enemy: jcomDataModels.JcomEnemyDataModel,
 	};
 
 	CONFIG.Item.dataModels = {
-		talent: JcomTalentDataModel,
+		talent: jcomDataModels.JcomTalentDataModel,
+		race: jcomDataModels.JcomRaceDataModel,
 	};
 }
 
@@ -42,8 +50,40 @@ function registerDocumentSheets() {
 	Actors.unregisterSheet("core", ActorSheet);
 	Items.unregisterSheet("core", ItemSheet);
 
-	Actors.registerSheet(SYSTEM_ID, JcomAdventurerSheet, {types: ["adventurer"], makeDefault: true});
-	Actors.registerSheet(SYSTEM_ID, JcomEnemySheet, {types: ["enemy"], makeDefault: true});
+	Actors.registerSheet(
+		SYSTEM_ID,
+		jcomSheets.JcomAdventurerSheet,
+		{
+			makeDefault: true,
+			types: ["adventurer"],
+		}
+	);
 
-	Items.registerSheet(SYSTEM_ID, JcomTalentSheet, {types: ["talent"], makeDefault: true});
+	Actors.registerSheet(
+		SYSTEM_ID,
+		jcomSheets.JcomEnemySheet,
+		{
+			makeDefault: true,
+			types: ["enemy"],
+		}
+	);
+
+
+	Items.registerSheet(
+		SYSTEM_ID,
+		jcomSheets.JcomRaceSheet,
+		{
+			makeDefault: true,
+			types: ["race"],
+		}
+	);
+
+	Items.registerSheet(
+		SYSTEM_ID,
+		jcomSheets.JcomTalentSheet,
+		{
+			makeDefault: true,
+			types: ["talent"],
+		}
+	);
 }
