@@ -16,9 +16,9 @@ export default class JcomAdventurerDataModel extends foundry.abstract.DataModel 
 				JcomAttributesDataModel.defineSchema()
 			),
 			biography: new fields.HTMLField(),
-			momentum:  new fields.SchemaField({
+			momentum: new fields.SchemaField({
 				generated: new fields.NumberField({min: 0, initial: 0, integer: true}),
-				stored:    new fields.NumberField({min: 0, initial: 0, integer: true}),
+				stored: new fields.NumberField({min: 0, initial: 0, integer: true}),
 			}),
 			race: new fields.ForeignDocumentField(
 				JcomItem,
