@@ -1,10 +1,11 @@
-.vscode/
+.vscode/*
 node_modules/
 scratch/
 system/css/
 system/i18n/
 
 *.code-workspace
+system/jcom-compiled.*
 
 # Allow these specific files from the above directories
 !.vscode/extensions.json

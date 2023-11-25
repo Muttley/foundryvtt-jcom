@@ -1,0 +1,19 @@
+{{#each CONFIG.ATTRIBUTES as |attr|}}
+	<div class="grid-2-columns" style="width: 140px; height: 90px; align-items: center;">
+		<div class="grid-1-columns">
+			<div style="background: #7c1c27; color: white; height: min-content;">
+				{{attr}}
+			</div>
+			<div style="background: #d5ba99; height:max-content;">
+				4
+			</div>
+		</div>
+		<div>
+			{{#each ../CONFIG.ATTRIBUTES as |linkedAttr|}}
+				{{#ifNeq attr linkedAttr}}
+					<div>+ {{linkedAttr}}</div>
+				{{/ifNeq}}
+			{{/each}}
+		</div>
+	</div>
+{{/each}}

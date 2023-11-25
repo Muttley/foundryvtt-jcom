@@ -1,0 +1,119 @@
+@use "../mixins" as *;
+
+.jcom.sheet.actor {
+
+	input {
+		@include p-reset;
+		width: 100%;
+
+		font-family: 'Playfair Display';
+		font-size: 1.1em;
+		font-weight: 300;
+
+		text-align: center;
+		text-shadow: 1px 1px black;
+		text-overflow: ellipsis;
+
+		color: white;
+		background: rgba(0, 0, 0, 0.3);
+
+		border: none;
+		border-bottom-color: rgb(169, 143, 57);;
+		border-bottom-style: solid;
+		border-bottom-width: 2px;
+	}
+
+	.sidebar-input__large {
+		font-size: 1.3em;
+		font-weight: 600;
+	}
+
+	.sidebar-input__small {
+		font-size: 1em;
+		font-weight: 400;
+	}
+
+	.sidebar-label {
+		@include p-reset;
+		padding-left: 4px;
+		padding-right: 4px;
+
+		align-self: end;
+		width: min-content;
+
+		font-family: "Playfair Display";
+		font-weight: bold;
+		font-variant: small-caps;
+		font-size: 1.2em;
+
+		color: white;
+		background-color: rgba(0, 0, 0, 0.5);
+
+		text-align: center;
+		text-decoration: none;
+		text-shadow: 2px 2px 8px red;
+	}
+
+	section.window-content {
+		@include p-reset;
+		background-image: url("../assets/ui/background-actor-body.webp");
+	}
+
+	.actor {
+		&__body {
+			display: grid;
+			margin: 8px;
+		}
+
+		&__grid {
+			display: grid;
+			grid-template-columns: 180px 1fr;
+		}
+
+		&__image-frame {
+			@include p-reset;
+			margin-top: 8px;
+
+			img {
+				display: block;
+
+				min-height: 150px;
+				height: 150px;
+				width: auto;
+
+				margin-left: auto;
+				margin-right: auto;
+
+				border-radius: 0;
+				border: none;
+
+				cursor: pointer;
+				object-fit: cover;
+				object-position: top;
+
+				box-shadow:
+					0 0 0 1px rgb(145, 140, 136),
+					0 0 0 2px rgb(225, 216, 207),
+					0 0 0 3px rgb(168, 142, 56),
+					inset 0 0 8px rgba(0, 0, 0, 0.5),
+					0 0 8px black;
+			}
+		}
+
+		&__name {
+			@include p-reset;
+			margin-top: 8px;
+			margin-left: 4px;
+			margin-right: 4px;
+		}
+
+		&__sidebar {
+			background-image: url("../assets/ui/background-actor-sidebar.webp");
+			background-repeat: repeat-y;
+
+			// border-right: 2px solid black;
+			box-shadow: 4px 0px 8px black;
+		}
+	}
+
+}

@@ -1,0 +1,10 @@
+.attribute__grid {
+	display: grid;
+	grid-template-columns: 2fr 2fr 1fr 1fr;
+	border: 2px;
+}
+
+.attribute__parent {
+	display: grid;
+	grid-row: span 5;
+}

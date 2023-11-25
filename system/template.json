@@ -1,0 +1,8 @@
+{
+  "Actor": {
+    "types": ["adventurer", "enemy"]
+  },
+  "Item": {
+    "types": ["race", "talent"]
+  }
+}
