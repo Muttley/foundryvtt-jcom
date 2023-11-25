@@ -8,7 +8,9 @@ import * as jcomSheets from "../sheets/_module.mjs";
 
 import Logger from "../utils/Logger.mjs";
 
+import loadTemplates from "../templates.mjs";
 import registerSystemSettings from "../settings.mjs";
+import registerHandlebarsHelpers from "../handlebars.mjs";
 
 export function init() {
 	console.log(`${SYSTEM_NAME} | Initializing System`);
@@ -27,6 +29,9 @@ export function init() {
 	registerDocumentSheets();
 	registerDocumentClasses();
 	registerSystemSettings();
+	registerHandlebarsHelpers();
+
+	loadTemplates();
 }
 
 function registerDataModels() {

@@ -1,3 +1,9 @@
+JCOM.actor.attribute.cunning: Cunning
+JCOM.actor.attribute.daring: Daring
+JCOM.actor.attribute.empathy: Empathy
+JCOM.actor.attribute.might: Might
+JCOM.actor.attribute.passion: Passion
+JCOM.actor.attribute.reason: Reason
 JCOM.actor.name.placeholder: Actor Name
 JCOM.settings.debugEnabled.hint: Enable or Disable additional debug logging
 JCOM.settings.debugEnabled.name: Enable/Disable Debug

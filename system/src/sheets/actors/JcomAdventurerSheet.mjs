@@ -13,6 +13,7 @@ export default class JcomAventurerSheet extends JcomActorBaseSheet {
 	/** @override */
 	async getData() {
 		const context = await super.getData();
+		context.CONFIG = CONFIG.SYSTEM;
 		return context;
 	}
 
