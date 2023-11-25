@@ -3,14 +3,13 @@
 	"title": "John Carter of Mars",
 	"desciption": "A system for playing the John Carter of Mars RPG from Modiphius",
 	"version": "0.9.0",
-	"schema": "230329.1",
 	"compatibility": {
 		"minimum": "11",
 		"verified": "11"
 	},
-	"url": "THIS_IS_REPLACED_AT_BUILD_TIME",
-	"manifest": "THIS_IS_REPLACED_AT_BUILD_TIME",
-	"download": "THIS_IS_REPLACED_AT_BUILD_TIME",
+	"url": "https://github.com/Muttley/foundryvtt-jcom",
+	"manifest": "https://raw.githubusercontent.com/Muttley/foundryvtt-jcom/main/system/system.json",
+	"download": "https://github.com/Muttley/foundryvtt-jcom/releases/latest/download/jcom.zip",
 	"authors": [
 		{
 			"name": "Paul Maskelyne",
