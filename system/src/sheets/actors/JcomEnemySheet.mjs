@@ -4,7 +4,7 @@ export default class JcomEnemySheet extends JcomActorBaseSheet {
 
 	/** @override */
 	static get defaultOptions() {
-		return mergeObject(super.defaultOptions, {
+		return foundry.utils.mergeObject(super.defaultOptions, {
 			width: 720,
 			height: 780,
 		});
