@@ -1,4 +1,5 @@
 import { rollup } from "rollup";
+import {deleteAsync} from "del";
 import eslint from "gulp-eslint-new";
 import gulp from "gulp";
 import gulpIf from "gulp-if";
@@ -6,6 +7,11 @@ import mergeStream from "merge-stream";
 import nodeResolve from "@rollup/plugin-node-resolve";
 
 const SRC_LINT_PATHS = ["./system/jcom.mjs", "./system/src/"];
+
+function cleanupJavascriptFiles() {
+	return deleteAsync("./system/jcom-compiled.mjs*");
+}
+export const clean = cleanupJavascriptFiles;
 
 // Compile javascript source files into a single output file.
 //
@@ -23,6 +29,8 @@ async function compileJavascript() {
 }
 export const compile = compileJavascript;
 
+// Use eslint to check for formatting issues
+//
 function lintJavascript() {
 	const tasks = SRC_LINT_PATHS.map(path => {
 		const src = path.endsWith("/")
@@ -35,7 +43,9 @@ function lintJavascript() {
 
 		return gulp
 			.src(src)
-			.pipe(eslint({ fix: true }))
+			.pipe(eslint({
+				fix: false,
+			}))
 			.pipe(eslint.format())
 			.pipe(
 				gulpIf(
@@ -51,8 +61,7 @@ export const lint = lintJavascript;
 
 // Watch for file changes and lint when they do
 //
-export function watchJavascriptUpdates() {
+export async function watchJavascriptUpdates() {
 	gulp.watch(SRC_LINT_PATHS, gulp.parallel(lint, compile));
 }
-
 export const watchUpdates = watchJavascriptUpdates;
