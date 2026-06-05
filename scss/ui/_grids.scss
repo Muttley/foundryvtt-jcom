@@ -1,7 +1,9 @@
+@use "../mixins/layout";
+
 $columns: 6;
 
 %grid-styles {
-	@include p-reset;
+	@include layout.p-reset;
 	display: grid;
 	column-gap: 4px;
 }

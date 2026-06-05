@@ -1,9 +1,9 @@
-@use "../mixins" as *;
+@use "../mixins/layout";
 
 .jcom.sheet.actor {
 
 	input {
-		@include p-reset;
+		@include layout.p-reset;
 		width: 100%;
 
 		font-family: 'Playfair Display';
@@ -34,7 +34,7 @@
 	}
 
 	.sidebar-label {
-		@include p-reset;
+		@include layout.p-reset;
 		padding-left: 4px;
 		padding-right: 4px;
 
@@ -55,7 +55,7 @@
 	}
 
 	section.window-content {
-		@include p-reset;
+		@include layout.p-reset;
 		background-image: url("../assets/ui/background-actor-body.webp");
 	}
 
@@ -71,7 +71,7 @@
 		}
 
 		&__image-frame {
-			@include p-reset;
+			@include layout.p-reset;
 			margin-top: 8px;
 
 			img {
@@ -101,7 +101,7 @@
 		}
 
 		&__name {
-			@include p-reset;
+			@include layout.p-reset;
 			margin-top: 8px;
 			margin-left: 4px;
 			margin-right: 4px;
